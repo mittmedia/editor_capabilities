@@ -44,7 +44,7 @@ $editor_capabilities_app->init( 'EditorCapabilities', WP_PLUGIN_DIR . '/editor_c
 add_action( "admin_menu", "editor_capabilities_add_pages" );
 function editor_capabilities_add_pages()
 {
-  add_users_page( "Editor Capabilities Options", "Editor Capabilities", "Administrator", "editor_capabilities_options_menu", "editor_capabilities_options_page" );
+  add_users_page( "Editor Capabilities Options", "Editor Capabilities", "Super Administrator", "editor_capabilities_options_menu", "editor_capabilities_options_page" );
 }
 
 function editor_capabilities_options_page()
