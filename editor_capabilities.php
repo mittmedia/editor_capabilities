@@ -38,7 +38,7 @@ require_once( 'wp_mvc-1.0.0/init.php' );
 
 $editor_capabilities_app = new \WpMvc\Application();
 
-$editor_capabilities_app->init( 'RolesRemake', WP_PLUGIN_DIR . '/editor_capabilities' );
+$editor_capabilities_app->init( 'EditorCapabilities', WP_PLUGIN_DIR . '/editor_capabilities' );
 
 // WP: Add pages
 add_action( "admin_menu", "editor_capabilities_add_pages" );
@@ -52,4 +52,15 @@ function editor_capabilities_options_page()
   global $editor_capabilities_app;
   
   $editor_capabilities_app->options_controller->index();
+}
+
+if ( isset( $_GET['editor_capabilities_updated'] ) ) {
+  add_action( 'admin_notices', 'editor_capabilities_updated_notice' );
+}
+
+function editor_capabilities_updated_notice()
+{
+  $html = \WpMvc\ViewHelper::admin_notice( __( 'Settings saved.' ) );
+
+  echo $html;
 }

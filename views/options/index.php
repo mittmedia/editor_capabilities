@@ -1,9 +1,9 @@
-<?php global $roles_and_capabilities; ?>
+<?php global $blog; global $roles_and_capabilities; ?>
 
 <div class="wrap">
   <div id="icon-options-general" class="icon32"><br></div>
   <h2><?php _e( 'Editor Capabilities' ); ?></h2>
-  <form action="/tarthumlan/wp-admin/users.php?page=editor_capabilities_options_menu" method="post">
+  <form action="<?php echo $blog->path; ?>wp-admin/users.php?page=editor_capabilities_options_menu" method="post">
     <table class="form-table">
       <tbody>
         <tr valign="top">
