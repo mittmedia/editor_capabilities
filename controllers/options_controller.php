@@ -16,13 +16,13 @@ namespace EditorCapabilities
       $roles_and_capabilities = unserialize( $blog->options->{"wp_{$blog->blog_id}_user_roles"}->option_value );
 
       if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
-        if ( isset( $_POST['capabilities']['switch_themes'] ) ) {
+        if ( isset( $_POST['blog']["wp_{$blog->blog_id}_user_roles"]['switch_themes'] ) ) {
           $roles_and_capabilities['editor']['capabilities']['switch_themes'] = true;
         } else {
           unset( $roles_and_capabilities['editor']['capabilities']['switch_themes'] );
         }
 
-        if ( isset( $_POST['capabilities']['edit_theme_options'] ) ) {
+        if ( isset( $_POST['blog']["wp_{$blog->blog_id}_user_roles"]['edit_theme_options'] ) ) {
           $roles_and_capabilities['editor']['capabilities']['edit_theme_options'] = true;
         } else {
           unset( $roles_and_capabilities['editor']['capabilities']['edit_theme_options'] );
