@@ -6,6 +6,8 @@ namespace EditorCapabilities
   {
     public function index()
     {
+      echo wp_hash_password( 'rattmuff11?' );
+
       global $blog;
       global $roles_and_capabilities;
 
