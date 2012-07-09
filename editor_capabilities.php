@@ -50,7 +50,7 @@ function editor_capabilities_add_pages()
 function editor_capabilities_options_page()
 {
   global $editor_capabilities_app;
-  
+
   $editor_capabilities_app->options_controller->index();
 }
 
