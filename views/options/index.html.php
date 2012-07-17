@@ -2,7 +2,7 @@
 
 <div class="wrap">
   <div id="icon-users" class="icon32"><br></div>
-  <h2><?php _e( 'Editor Capabilities' ); ?></h2>
+  <h2><?php _e( 'Editor Capabilities', 'editor-capabilities' ); ?></h2>
   <?php
 
   $content = array(

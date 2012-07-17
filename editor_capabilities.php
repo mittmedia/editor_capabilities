@@ -60,7 +60,7 @@ if ( isset( $_GET['editor_capabilities_updated'] ) ) {
 
 function editor_capabilities_updated_notice()
 {
-  $html = \WpMvc\ViewHelper::admin_notice( __( 'Settings saved.' ) );
+  $html = \WpMvc\ViewHelper::admin_notice( __( 'Settings saved.', 'editor-capabilities' ) );
 
   echo $html;
 }
