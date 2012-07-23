@@ -15,7 +15,7 @@ namespace EditorCapabilities
 
       $roles_and_capabilities = unserialize( $blog->options->{"wp_{$blog->blog_id}_user_roles"}->option_value );
 
-      if ( $_SERVER['REQUEST_METHOD'] == 'POST' ) {
+      if ( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_GET['page'] ) && $_GET['page'] == 'editor_capabilities_options_menu' ) {
         if ( isset( $_POST['blog']["wp_{$blog->blog_id}_user_roles"]['switch_themes'] ) ) {
           $roles_and_capabilities['editor']['capabilities']['switch_themes'] = true;
         } else {
