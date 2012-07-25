@@ -51,7 +51,7 @@ function editor_capabilities_options_page()
 {
   global $editor_capabilities_app;
 
-  $editor_capabilities_app->options_controller->index();
+  $editor_capabilities_app->option_controller->index();
 }
 
 if ( isset( $_GET['editor_capabilities_updated'] ) ) {

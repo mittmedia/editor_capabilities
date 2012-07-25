@@ -8,7 +8,7 @@
   $content = array(
     array(
       'title' => 'Capabilities',
-      'name' => $blog->options->{"wp_{$blog->blog_id}_user_roles"}->option_name,
+      'name' => $blog->option->{"wp_{$blog->blog_id}_user_roles"}->option_name,
       'type' => 'checkboxes',
       'options' => array(
         'switch_themes' => array(

@@ -13,7 +13,7 @@ namespace EditorCapabilities
 
       $blog = \WpMvc\Blog::find( $current_blog_id );
 
-      $roles_and_capabilities = unserialize( $blog->options->{"wp_{$blog->blog_id}_user_roles"}->option_value );
+      $roles_and_capabilities = unserialize( $blog->option->{"wp_{$blog->blog_id}_user_roles"}->option_value );
 
       if ( $_SERVER['REQUEST_METHOD'] == 'POST' && isset( $_GET['page'] ) && $_GET['page'] == 'editor_capabilities_options_menu' ) {
         if ( isset( $_POST['blog']["wp_{$blog->blog_id}_user_roles"]['switch_themes'] ) ) {
@@ -28,7 +28,7 @@ namespace EditorCapabilities
           unset( $roles_and_capabilities['editor']['capabilities']['edit_theme_options'] );
         }
 
-        $blog->options->{"wp_{$blog->blog_id}_user_roles"}->option_value = serialize( $roles_and_capabilities );
+        $blog->option->{"wp_{$blog->blog_id}_user_roles"}->option_value = serialize( $roles_and_capabilities );
 
         $blog->save();
 
