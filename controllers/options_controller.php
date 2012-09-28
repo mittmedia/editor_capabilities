@@ -11,6 +11,9 @@ namespace EditorCapabilities
 
       $current_blog_id = get_current_blog_id();
 
+      if ($current_blog_id == 1)
+        wp_die(__("This is the main site which only the super admin can change, thus there's no need for increased capabilities."));
+
       $blog = \WpMvc\Blog::find( $current_blog_id );
 
       $roles_and_capabilities = unserialize( $blog->option->{"wp_{$blog->blog_id}_user_roles"}->option_value );
